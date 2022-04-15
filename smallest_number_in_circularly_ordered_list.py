@@ -30,7 +30,7 @@ class SmallestNumberInOrderedList:
     def has_a_single_element(self) -> bool:
         return self.len_ordered_list() == 1
 
-    def cut_in_two_by_index(self) -> list:
+    def halve(self) -> list:
         ordered_list = self.ordered_list
         middle_index = self.get_middle_index()
         start_index = middle_index
@@ -47,15 +47,15 @@ class SmallestNumberInOrderedList:
             previous_index = middle_index - 1
             middle_element = get_element_by_index(self.ordered_list, previous_index)
 
-        cut_ordered_list = self.cut_in_two_by_index()
-        first_part_cut = get_element_by_index(cut_ordered_list, 0)
-        second_part_cut = get_element_by_index(cut_ordered_list, 1)
-        last_element_in_second_part = get_element_by_index(second_part_cut, -1)
+        halved_list = self.halve()
+        first_part = get_element_by_index(halved_list, 0)
+        second_part = get_element_by_index(halved_list, 1)
+        last_element_in_second_part = get_element_by_index(second_part, -1)
 
         if middle_element > last_element_in_second_part:
-            first_part_cut = second_part_cut
+            first_part = second_part
 
-        self.ordered_list = first_part_cut
+        self.ordered_list = first_part
 
         if self.has_a_single_element():
             return get_element_by_index(self.ordered_list, 0)

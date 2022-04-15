@@ -30,10 +30,10 @@ class TestSmallerNumberInCircularlyOrderedList:
         ([40, 50, 60, 70, 10, 20, 30], 3, [[40, 50, 60, 70], [70, 10, 20, 30]]),
         ([10, 20, 30, 40, 50, 60, 70, 80], 4, [[10, 20, 30, 40], [50, 60, 70, 80]])
     ])
-    def test_cut_in_two_by_index(self, ordered_list, middle_index, expected):
+    def test_halve(self, ordered_list, middle_index, expected):
         self.ordered_list = ordered_list
-        cut_ordered_list = self.get_smallest_number_finder().cut_in_two_by_index()
-        assert cut_ordered_list == expected
+        halved_list = self.get_smallest_number_finder().halve()
+        assert halved_list == expected
 
     @pytest.mark.parametrize("ordered_list, expected", [
         ([10, 20, 30, 40, 50, 60, 70], 10),
