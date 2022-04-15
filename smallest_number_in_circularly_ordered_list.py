@@ -27,7 +27,7 @@ class SmallestNumberInOrderedList:
         middle_index = math.floor(self.len_ordered_list() / 2)
         return middle_index
 
-    def has_a_single_element(self):
+    def has_a_single_element(self) -> bool:
         return self.len_ordered_list() == 1
 
     def cut_in_two_by_index(self) -> list:
@@ -39,7 +39,7 @@ class SmallestNumberInOrderedList:
             end_index = end_index + 1
         return [ordered_list[:end_index], ordered_list[start_index:]]
 
-    def find_smallest_number(self):
+    def find_smallest_number(self) -> int:
         middle_index = self.get_middle_index()
         middle_element = get_element_by_index(self.ordered_list, middle_index)
 
