@@ -64,7 +64,8 @@ class SmallestNumberInOrderedList:
 
 
 if __name__ == '__main__':
+    smallest_number_in_ordered_list = SmallestNumberInOrderedList([])
     for current_ordered_list in circularly_ordered_list_data_set:
-        smallest_number_in_ordered_list = SmallestNumberInOrderedList(current_ordered_list)
+        smallest_number_in_ordered_list.ordered_list = current_ordered_list
         smallest_number = smallest_number_in_ordered_list.find_smallest_number()
         print('The smallest number in circularly ordered list is: {}'.format(smallest_number))
